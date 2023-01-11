@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@400;700&display=swap');
 
-body{
-    background-color: #ECE5C7;
-    color: #354259;
+:root {
+    --cor-de-fundo: #ECE5C7;
+    --cor-de-texto: #354259;
+    --cor-de-fundo-container: #C2DED1;
+    --cor-de-fundo-hover: #252e3d;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-texto);
+
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
 }
 
-.principal{
+/* SEÇÃO PRINCIPAL */
+
+.principal {
     display: flex;
     width: 70vw;
     height: 600px;
@@ -16,8 +26,10 @@ body{
     align-items: center;
 }
 
-.principal__container{
+.principal__container {
     display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 5% 30% 30% 30% 5%;
     grid-template-areas: 
     "linha1 imagem"
     "linha2 imagem"
@@ -25,98 +37,106 @@ body{
     "linha4 imagem"
     "linha5 imagem";
 
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 5% 30% 30% 30% 5%;
-
-    background-color: #C2DED1;
-    border: 2px solid #354259;
+    background-color: var(--cor-de-fundo-container);
+    border: 2px solid var(--cor-de-texto);
     box-shadow: 1px 1px 8px 1px #354259;
     border-radius: 20px;
 }
 
-.principal__titulo{
+/* ITEMS RESTANTES */
+
+.principal__titulo {
     grid-area: linha2;
-    width: 60%;
     align-self: end;
+    width: 60%;
     padding-left: 40px;
+    
     font-weight: 700;
     font-size: 40px;
 }
 
-.principal__texto{
+.principal__texto {
     grid-area: linha3;
-    align-self: center;
-    font-size: 24px;
     padding-left: 40px;
     padding-right: 40px;
+    align-self: center;
+    
+    font-size: 24px;
 }
 
-.principal__input{
+.principal__input {
     grid-area: linha4;
     margin-left: 40px;
     align-self: start;
     width: 60%;
     height: 30px;
-    background-color: #ECE5C7;
     padding: 0;
     padding-left: 20px;
+
+    background-color: var(--cor-de-fundo-container);
     border: none;
-    border: 2px solid #354259;
+    border: 2px solid var(--cor-de-texto);
     border-radius: 20px 0 0 20px;
 }
 
-.principal__input:focus{
+.principal__input:focus {
     outline: none;
 }
 
-.principal__button{
+.principal__button {
     width: 100px;
     height: 35px;
-    background-color: #354259;
-    color: #C2DED1;
-    font-weight: 700;
     padding: 0;
+
+    background-color: var(--cor-de-texto);
+    color: var(--cor-de-fundo-container);
+    font-weight: 700;
     border-radius: 0 20px 20px 0;
+
     cursor: pointer;
 }
 
-.principal__button:hover{
+.principal__button:hover {
     transition: all .2s ease-in-out;
     transform: scale(1.1);
-    background-color: #252e3d;
+    background-color: var(--cor-de-fundo-hover);
     color:white;
 }
 
-.input-button__container{
-    padding: 0;
-    grid-area: linha4;
-    align-self: top;
-}
-
-.principal__imagem{
+.principal__imagem {
     grid-area: imagem;
     width: 100%;
     height: 100%;
+
     border-radius: 0 20px 20px 0;
 }
 
-.principal__icones{
+.input-button__container {
+    grid-area: linha4;
+    align-self: top;
+    padding: 0;
+}
+
+.principal__icones {
     grid-area: linha4;
     align-self: end;
     margin: 0 auto;
-    border-top: 2px solid #354259;
+
+    border-top: 2px solid var(--cor-de-texto);
 }
 
-.icones{
+.icones {
     font-size: 32px;
     margin: 0 16px;
     margin-bottom: 0;
     margin-top: 16px;
-    color:#354259;
+
+    color:var(--cor-de-texto);
+
     cursor:pointer;
 }
 
-.icones:hover{
+.icones:hover {
     transition: all .2s ease-in-out;
     transform: scale(1.3);
 }

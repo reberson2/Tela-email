@@ -73,7 +73,7 @@ body {
     padding: 0;
     padding-left: 20px;
 
-    background-color: var(--cor-de-fundo-container);
+    background-color: var(--cor-de-fundo);
     border: none;
     border: 2px solid var(--cor-de-texto);
     border-radius: 20px 0 0 20px;
